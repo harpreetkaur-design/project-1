@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+int main ()
+{
+    string option;
+    string hk,pf ="",I="abcdefghijklmnopqrstuvwxyz";
+    string decryption1;
+    int ps,i,j,k,l;
+    cout << "Do you want to encrypt or decrypt? \n";
+    cin >>  option;
+
+    if (option == "encrypt")
+    {
+        cout << "What do you want to encrypt \n";
+        cin>>hk;
+        cout << "Value for Shift: \n";
+        cin>>ps;
+            for( i=0;i<hk.length();i++)
+    {
+        for( j=0;j<26;j++)
+        {
+            if(hk[i]==I[j])
+            {
+                if((j+ps)>25)
+                {
+                    int t=(j+ps-1)-25;
+                  pf+=I[t];
